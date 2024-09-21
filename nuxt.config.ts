@@ -1,6 +1,5 @@
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify';
 export default defineNuxtConfig({
-  //...
   build: {
     transpile: ['vuetify'],
   },
@@ -13,6 +12,11 @@ export default defineNuxtConfig({
       });
     },
   ],
+
+  runtimeConfig: {
+    mongoUri: process.env.MONGO_URI || '',
+    mongoDbName: process.env.MONGO_DB_NAME || '',
+  },
 
   vite: {
     vue: {
